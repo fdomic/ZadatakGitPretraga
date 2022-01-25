@@ -10,8 +10,10 @@ use Illuminate\Support\Facades\Http;
 class GitController extends ApsController
 {
     public function findScoreFromGit($term){
-        $RocksResponse = Http::get('https://api.github.com/search/issues?q='.$request->input('term').'%20rocks');
-        $SucksResponse = Http::get('https://api.github.com/search/issues?q='.$request->input('term').'%20sucks'); 
+
+
+        $RocksResponse = Http::get('https://api.github.com/search/issues?q='.$term.'%20rocks');
+        $SucksResponse = Http::get('https://api.github.com/search/issues?q='.$term.'%20sucks'); 
         
         $rocks = $RocksResponse->json("total_count");
         $sucks = $SucksResponse->json("total_count");
@@ -26,7 +28,7 @@ class GitController extends ApsController
 
         );
         
-        return response()->json($response, 200);
+        return $response;
 
     }
 }

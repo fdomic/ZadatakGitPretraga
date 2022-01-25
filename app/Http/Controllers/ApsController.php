@@ -8,26 +8,29 @@ use Illuminate\Http\Request;
 
 Abstract class ApsController 
 {
-    public function getResult($term){
+    public function getScore($term){
         
-        $data = Result::where('term',$term )->find();
+        $data = Result::where('term',$term )->first();
 
         if(!$data){
 
             $result = $this->findScoreFromGit($term) ;
             $data = new Result($result);
             $data->save();
-
         }
 
+        return $data;
     }
 
-    protected function calc($rocks, $stucks){
-        $total = $rocks + $stucks;
+    protected function calc($rocks, $sucks){
+        $total = $rocks + $sucks;
         if($total == 0) return 0;
-        $score = 10 * $rock / ($rock + $sucks );
 
+        $score = 10 * $rocks / ($rocks + $sucks );
         return   $score;
     }
     
+
+    public abstract function findScoreFromGit($term);
+
 }

@@ -9,8 +9,6 @@ class Result extends Model
 {
     protected $table = 'result';
   
-    protected $guarded = ['id'];
-
     protected $casts =[
         
         'rock' => 'int',
@@ -21,8 +19,8 @@ class Result extends Model
 	
     protected $fillable = [ 
         'term',
-        'rock',
-        'suck',
+        'rocks',
+        'sucks',
         'score'   
     ];
 }

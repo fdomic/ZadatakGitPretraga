@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TwiController extends Controller
+class TwiController extends ApsController
 {
-     public function findScoreFromTwi($term){
+     public function findScoreFromGit($term){
 
         //TODO URL ONLY
-        $RocksResponse = Http::get();
-        $SucksResponse = Http::get(); 
+        //$RocksResponse = Http::get();
+        //$SucksResponse = Http::get(); 
         
-        $rocks = $RocksResponse->json("total_count");
-        $sucks = $SucksResponse->json("total_count");
+        $rocks = 0; //$RocksResponse->json("total_count");
+        $sucks = 0; //$SucksResponse->json("total_count");
         $score = $this->calc($rocks,$sucks);
 
         $response = array(
@@ -25,7 +25,7 @@ class TwiController extends Controller
 
         );
         
-        return response()->json($response, 200);
+        return $response;
 
     }
 }
