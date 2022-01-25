@@ -16,7 +16,7 @@ class ResultController extends Controller
         $suck =$SucksResponse->json("total_count");
         
         
-        return response()->json($rock,$suck, 200);
+        return response()->json($suck, 200);
 
     }
 
