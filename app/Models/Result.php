@@ -10,11 +10,9 @@ class Result extends Model
     protected $table = 'result';
   
     protected $casts =[
-        
         'rock' => 'int',
         'suck' => 'int',
-        'score' => 'float' ,
-
+        'score' => 'float',
     ];
 	
     protected $fillable = [ 

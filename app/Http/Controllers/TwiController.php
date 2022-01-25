@@ -11,7 +11,6 @@ class TwiController extends ApsController
         //TODO URL ONLY
         //$RocksResponse = Http::get();
         //$SucksResponse = Http::get(); 
-        
         $rocks = 0; //$RocksResponse->json("total_count");
         $sucks = 0; //$SucksResponse->json("total_count");
         $score = $this->calc($rocks,$sucks);
@@ -26,6 +25,5 @@ class TwiController extends ApsController
         );
         
         return $response;
-
     }
 }

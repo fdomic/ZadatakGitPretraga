@@ -21,7 +21,6 @@ class ResultController extends Controller
             );
                 return response()->json($response, 400);
         }
-
         $provider = new GitController();
         $result = $provider->getScore($request->input('term'));
 
@@ -32,10 +31,7 @@ class ResultController extends Controller
                 "attributes" => $result
             )
 
-            );
-      
-            return response()->json($response, 200);
-        
+        );    
+        return response()->json($response, 200);
     }
-
 }
