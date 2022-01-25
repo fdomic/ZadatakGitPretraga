@@ -13,11 +13,11 @@ class CreateResultsTable extends Migration
      */
     public function up()
     {
-        Schema::create('results', function (Blueprint $table) {
+        Schema::create('result', function (Blueprint $table) {
             $table->id();
             $table->string('term');
-            $table->intiger('rocks');
-            $table->intiger('sucks');
+            $table->integer('rocks');
+            $table->integer('sucks');
             $table->float('score');
             $table->timestamps();
         });
