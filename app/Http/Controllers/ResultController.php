@@ -9,8 +9,8 @@ class ResultController extends Controller
 {
     public function getResult( Request $request){
 
-        $RocksResponse = Http::get('https://api.github.com/search/issues?q='.$request->has('term').'%20rocks');
-        $SucksResponse = Http::get('https://api.github.com/search/issues?q='.$request->has('term').'%20sucks'); 
+        $RocksResponse = Http::get('https://api.github.com/search/issues?q='.$request->input('term').'%20rocks');
+        $SucksResponse = Http::get('https://api.github.com/search/issues?q='.$request->input('term').'%20sucks'); 
         
         $rock = $RocksResponse->json("total_count");
         $sucks = $SucksResponse->json("total_count");
