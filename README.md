@@ -7,8 +7,13 @@ Takoder biljezi za {rijec} rocks kao pozitivan rezultat i {rijec} sucks kao nega
 
 ## Preduslovi za instalaciju
 
+Instalacija composer-a kako bismo mogli kreirati 
+projek unutar kojeg koristimo (Php laravel).
+
+Takoder treba instalirati xampp.
+
 Za ovaj projek potrebno je samo prilagoditi bazu podataka,
-korišten je php my admin i korišteni su podatci:
+korišten je mySql i korišteni su podatci:
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -19,6 +24,8 @@ DB_PASSWORD=
 
 
 ## Nacin upotrebe
+
+Treba pokrenuti program sa php artisan serve.
 
 U url treba upisati zeljenu rijec za koju zelimo saznati popularnost,
 na primjheru ispod iskoritili smo rijec java: 
